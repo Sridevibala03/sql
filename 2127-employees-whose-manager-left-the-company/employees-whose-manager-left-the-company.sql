@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select employee_id from (select e.employee_id, e.manager_id, f.employee_id as emp, e.salary from Employees e left join employees f on e.manager_id = f.employee_id) t where t.manager_id is not null and t.emp is null and salary < 30000 order by employee_id 
