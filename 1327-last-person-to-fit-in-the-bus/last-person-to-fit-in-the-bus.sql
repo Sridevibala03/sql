@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select person_name from (select person_id, person_name, weight, sum(weight) over (order by turn ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as suj from queue) r where suj <=1000 order by suj desc limit 1;
